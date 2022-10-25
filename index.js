@@ -35,7 +35,6 @@ const contractAbi = "[{\n" +
     "\t}\n" +
     "]";
 
-// eslint-disable-next-line no-unused-vars
 async function inertWithContract(ids) {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const putContract = new ethers.Contract(contractAddress, contractAbi, provider);
@@ -43,7 +42,6 @@ async function inertWithContract(ids) {
     console.log("对应地址是", address)
 }
 
-// eslint-disable-next-line no-unused-vars
 async function bindWithContract(ids,bindAddress) {
     if (typeof window.ethereum != "undefined" && window.ethereum != "undefined") {
         await window.ethereum.request({method: "eth_requestAccounts"})
@@ -53,5 +51,5 @@ async function bindWithContract(ids,bindAddress) {
     }
 }
 
-module.exports.bindWithContract = bindWithContract;
-module.exports.inertWithContract = inertWithContract;
+exports.bindWithContract = bindWithContract;
+exports.inertWithContract = inertWithContract;
